@@ -373,7 +373,7 @@
 		"compilationTarget": {
 			"contracts/MyStandardERC20.sol": "MyStandardERC20"
 		},
-		"evmVersion": "london",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
