@@ -1,28 +1,48 @@
-REMIX DEFAULT WORKSPACE
+### NFT部署与使用步骤（对应作业流程）
 
-Remix default workspace is present when:
-i. Remix loads for the very first time 
-ii. A new workspace is created with 'Default' template
-iii. There are no files existing in the File Explorer
+1. **合约编译**：
 
-This workspace contains 3 directories:
+- - 在 Remix 中创建MyTestNFT.sol，粘贴上述代码；
 
-1. 'contracts': Holds three contracts with increasing levels of complexity.
-2. 'scripts': Contains four typescript files to deploy a contract. It is explained below.
-3. 'tests': Contains one Solidity test file for 'Ballot' contract & one JS test file for 'Storage' contract.
+- - 选择编译器版本0.8.25，点击「Compile MyTestNFT.sol」（确保无报错）。
 
-SCRIPTS
+1. **准备 IPFS 元数据**：
 
-The 'scripts' folder has four typescript files which help to deploy the 'Storage' contract using 'web3.js' and 'ethers.js' libraries.
+- - 上传图片到 Pinata，获取图片 IPFS 链接（如https://gateway.pinata.cloud/ipfs/QmX...）；
 
-For the deployment of any other contract, just update the contract name from 'Storage' to the desired contract and provide constructor arguments accordingly 
-in the file `deploy_with_ethers.ts` or  `deploy_with_web3.ts`
+- - 创建metadata.json（参考 OpenSea 标准），示例：
 
-In the 'tests' folder there is a script containing Mocha-Chai unit tests for 'Storage' contract.
+```
+{
+  "name": "My First Test NFT",
+  "description": "作业2：测试网图文NFT",
+  "image": "https://gateway.pinata.cloud/ipfs/bafybeibvsdi4mejssujzqx7dzgxfrlpeaows63hgx2pqmpswylcfvzhm4y", 
+  "attributes": [{"trait_type": "测试属性", "value": "完成作业"}]
+}
 
-To run a script, right click on file name in the file explorer and click 'Run'. Remember, Solidity file must already be compiled.
-Output from script will appear in remix terminal.
+https://gateway.pinata.cloud/ipfs/bafkreibx3eiyebrqfcoxab3ved6bqbsyi5az24rqhdsri6qszpx6yahssm
+```
 
-Please note, require/import is supported in a limited manner for Remix supported modules.
-For now, modules supported by Remix are ethers, web3, swarmgw, chai, multihashes, remix and hardhat only for hardhat.ethers object/plugin.
-For unsupported modules, an error like this will be thrown: '<module_name> module require is not supported by Remix IDE' will be shown.
+- - 上传metadata.json到 Pinata，获取元数据 IPFS 链接（如https://gateway.pinata.cloud/ipfs/QmY...）。
+
+1. **部署到测试网**：
+
+- - Remix 中切换到「Deploy & Run Transactions」，Environment选择Injected Provider - MetaMask；
+
+- - 构造函数参数输入：name_（如"MyTestNFT"）、symbol_（如"MTN"）；
+
+- - 点击「Deploy」，MetaMask 确认交易，记录部署后的合约地址。
+
+1. **铸造 NFT**：
+
+- - 在 Remix「Deployed Contracts」中展开合约，找到mintNFT函数；
+
+- - 输入参数：recipient（你的钱包地址）、tokenURI_（元数据 IPFS 链接）；
+
+- - 点击「transact」，MetaMask 确认交易，铸造成功后返回tokenId。
+
+1. **查看 NFT**：
+
+- - 在钱包中查看收藏品
+
+- - **Etherscan 测试网**：访问https://sepolia.etherscan.io/，输入合约地址，在「Token Transfers」中查看铸造记录。

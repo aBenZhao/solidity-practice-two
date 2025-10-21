@@ -1,0 +1,241 @@
+{
+	"compiler": {
+		"version": "0.8.25+commit.b61c2a91"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "ERC721ApprovalToCurrentOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "ERC721IncorrectOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ERC721InsufficientApproval",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "approver",
+						"type": "address"
+					}
+				],
+				"name": "ERC721InvalidApprover",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					}
+				],
+				"name": "ERC721InvalidOperator",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "ERC721InvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					}
+				],
+				"name": "ERC721InvalidReceiver",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "ERC721InvalidSender",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ERC721NonexistentToken",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ERC721TokenAlreadyMinted",
+				"type": "error"
+			}
+		],
+		"devdoc": {
+			"details": "标准 ERC-721 错误定义 遵循 https://eips.ethereum.org/EIPS/eip-6093[ERC-6093] 规范的自定义错误接口， 用于 ERC-721 代币合约中，替代传统的 revert 字符串提示，提升错误信息可读性和 Gas 效率。",
+			"errors": {
+				"ERC721IncorrectOwner(address,uint256,address)": [
+					{
+						"details": "表示代币所有权相关的错误（如转移时发送者不是所有者）。 通常在转移代币（transferFrom）时触发。",
+						"params": {
+							"owner": "代币的实际所有者地址",
+							"sender": "发起转移的地址（非所有者）",
+							"tokenId": "代币的唯一标识"
+						}
+					}
+				],
+				"ERC721InsufficientApproval(address,uint256)": [
+					{
+						"details": "表示操作员（operator）对代币的授权不足（未获得转移权限）。 通常在操作员尝试转移未授权的代币时触发。",
+						"params": {
+							"operator": "尝试操作代币的操作员地址",
+							"tokenId": "代币的唯一标识（未授权给该操作员）"
+						}
+					}
+				],
+				"ERC721InvalidApprover(address)": [
+					{
+						"details": "表示授权者（approver）无效（如非代币所有者或未获得批量授权）。 通常在授权操作（approve）时触发。",
+						"params": {
+							"approver": "发起授权的地址（无授权权限）"
+						}
+					}
+				],
+				"ERC721InvalidOperator(address)": [
+					{
+						"details": "表示被授权的操作员（operator）无效（如为零地址）。 通常在批量授权（setApprovalForAll）时触发。",
+						"params": {
+							"operator": "被授权的操作员地址（无效地址，如 address(0)）"
+						}
+					}
+				],
+				"ERC721InvalidOwner(address)": [
+					{
+						"details": "表示某个地址不能作为所有者（例如，`address(0)` 是 ERC-721 中禁止的所有者地址）。 通常在查询余额（balanceOf）时触发。",
+						"params": {
+							"owner": "代币的当前所有者地址（此处为无效地址）"
+						}
+					}
+				],
+				"ERC721InvalidReceiver(address)": [
+					{
+						"details": "表示代币接收者（to）无效（如为零地址或不支持接收 NFT 的合约）。 通常在转移代币时触发。",
+						"params": {
+							"receiver": "接收代币的地址（无效地址）"
+						}
+					}
+				],
+				"ERC721InvalidSender(address)": [
+					{
+						"details": "表示代币发送者（from）无效（如为零地址）。 通常在转移代币时触发。",
+						"params": {
+							"sender": "发起转移的地址（无效地址，如 address(0)）"
+						}
+					}
+				],
+				"ERC721NonexistentToken(uint256)": [
+					{
+						"details": "表示 `tokenId` 对应的代币不存在（其所有者为零地址）。 通常在查询不存在的代币信息（如 ownerOf）时触发。",
+						"params": {
+							"tokenId": "代币的唯一标识（无效/未铸造的 ID）"
+						}
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"errors/IERC721Errors.sol": "IERC721Errors"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"errors/IERC721Errors.sol": {
+			"keccak256": "0x134cb5782b7df3dabc3ef339338730d74276e5b6204977b7a1e7d02747be0a75",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://817d11e0fe9ed59296b58d77c8d3e3c84f748f6e95bfbc5e5f8cec6d5a76e458",
+				"dweb:/ipfs/QmU3Ja45w1NSzVKwAUg1SJRN3iBCqgWD8BFiphfqrYCHqm"
+			]
+		}
+	},
+	"version": 1
+}

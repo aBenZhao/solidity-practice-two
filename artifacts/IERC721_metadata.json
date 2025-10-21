@@ -1,0 +1,443 @@
+{
+	"compiler": {
+		"version": "0.8.25+commit.b61c2a91"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "approved",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "ApprovalForAll",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getApproved",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					}
+				],
+				"name": "isApprovedForAll",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "setApprovalForAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "ERC-721 标准合规合约的必备接口。 定义了非同质化代币（NFT）的核心功能规范，所有 ERC-721 代币合约必须实现此接口。",
+			"events": {
+				"Approval(address,address,uint256)": {
+					"details": "当 `owner` 授权 `approved` 地址管理 `tokenId` 对应的代币时触发。",
+					"params": {
+						"approved": "被授权管理代币的地址",
+						"owner": "代币所有者地址",
+						"tokenId": "被授权的代币唯一标识"
+					}
+				},
+				"ApprovalForAll(address,address,bool)": {
+					"details": "当 `owner` 授权或撤销（`approved` 为 true/false）`operator` 管理其所有资产时触发。",
+					"params": {
+						"approved": "授权状态（true 为授权，false 为撤销）",
+						"operator": "被授权的操作员地址",
+						"owner": "资产所有者地址"
+					}
+				},
+				"Transfer(address,address,uint256)": {
+					"details": "当 `tokenId` 对应的代币从 `from` 地址转移到 `to` 地址时触发。",
+					"params": {
+						"from": "转移发起地址",
+						"to": "接收地址",
+						"tokenId": "被转移的代币唯一标识"
+					}
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"approve(address,uint256)": {
+					"details": "授权 `to` 地址转移 `tokenId` 对应的代币（单次授权）。 当代币被转移后，该授权会自动清除。 同一时间只能有一个地址获得授权，授权零地址会清除之前的授权。  要求： - 调用者必须是代币所有者或已被授权的操作员。 - `tokenId` 必须存在。  触发 {Approval} 事件。",
+					"params": {
+						"to": "被授权的地址",
+						"tokenId": "被授权转移的代币唯一标识"
+					}
+				},
+				"balanceOf(address)": {
+					"details": "返回 `owner` 地址拥有的代币数量。",
+					"params": {
+						"owner": "要查询的地址"
+					},
+					"returns": {
+						"balance": "该地址持有的 NFT 总数"
+					}
+				},
+				"getApproved(uint256)": {
+					"details": "返回 `tokenId` 代币当前被授权的管理地址。  要求： - `tokenId` 必须存在。",
+					"params": {
+						"tokenId": "代币唯一标识"
+					},
+					"returns": {
+						"operator": "被授权管理该代币的地址（零地址表示无授权）"
+					}
+				},
+				"isApprovedForAll(address,address)": {
+					"details": "查看 `operator` 是否被允许管理 `owner` 的所有资产。 参考 {setApprovalForAll} 函数的授权逻辑。",
+					"params": {
+						"operator": "操作员地址",
+						"owner": "资产所有者地址"
+					},
+					"returns": {
+						"_0": "是否拥有批量管理权限"
+					}
+				},
+				"ownerOf(uint256)": {
+					"details": "返回 `tokenId` 对应的代币所有者地址。  要求： - `tokenId` 必须是已存在的代币（未被销毁）。",
+					"params": {
+						"tokenId": "代币唯一标识"
+					},
+					"returns": {
+						"owner": "代币所有者地址"
+					}
+				},
+				"safeTransferFrom(address,address,uint256)": {
+					"details": "将 `tokenId` 代币从 `from` 安全转移到 `to`（不带额外数据）。 与上一个函数功能一致，仅缺少 `data` 参数，适用于无需传递附加信息的场景。  要求： - 同 `safeTransferFrom`（带 data 参数的版本）。  触发 {Transfer} 事件。",
+					"params": {
+						"from": "转移发起地址",
+						"to": "接收地址",
+						"tokenId": "被转移的代币唯一标识"
+					}
+				},
+				"safeTransferFrom(address,address,uint256,bytes)": {
+					"details": "将 `tokenId` 代币从 `from` 安全转移到 `to`（带额外数据）。 \"安全\"指：若接收地址是合约，必须实现 `IERC721Receiver-onERC721Received` 函数，否则转移失败。  要求： - `from` 不能是零地址。 - `to` 不能是零地址。 - `tokenId` 必须存在且归 `from` 所有。 - 若调用者不是 `from`，则必须通过 {approve} 或 {setApprovalForAll} 获得转移授权。 - 若 `to` 是合约，必须实现 `IERC721Receiver-onERC721Received` 函数（用于确认接收）。  触发 {Transfer} 事件。",
+					"params": {
+						"data": "附加数据（会传递给接收合约的 `onERC721Received` 函数）",
+						"from": "转移发起地址",
+						"to": "接收地址",
+						"tokenId": "被转移的代币唯一标识"
+					}
+				},
+				"setApprovalForAll(address,bool)": {
+					"details": "授权或撤销 `operator` 作为调用者的操作员（批量授权）。 操作员可调用 {transferFrom} 或 {safeTransferFrom} 转移调用者拥有的所有代币。  要求： - `operator` 不能是零地址。  触发 {ApprovalForAll} 事件。",
+					"params": {
+						"approved": "授权状态（true 为授权，false 为撤销）",
+						"operator": "操作员地址"
+					}
+				},
+				"transferFrom(address,address,uint256)": {
+					"details": "将 `tokenId` 代币从 `from` 转移到 `to`（非安全转移）。  警告：调用者需确保接收地址（尤其是合约）能处理 ERC-721 代币，否则代币可能永久锁定。 建议优先使用 {safeTransferFrom} 避免丢失风险，但需注意外部调用可能存在重入漏洞。  要求： - `from` 不能是零地址。 - `to` 不能是零地址。 - `tokenId` 必须归 `from` 所有。 - 若调用者不是 `from`，则必须通过 {approve} 或 {setApprovalForAll} 获得转移授权。  触发 {Transfer} 事件。",
+					"params": {
+						"from": "转移发起地址",
+						"to": "接收地址",
+						"tokenId": "被转移的代币唯一标识"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/IERC721.sol": "IERC721"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/IERC721.sol": {
+			"keccak256": "0x549cb1efa76bced8f1c3a658c826408846b40a0d74e22de4d1f9b036932f6561",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://69104f8e79b94c8771f6f116bbf8881f84de757a06ac62005776002555410d84",
+				"dweb:/ipfs/QmSe4eEGooJLvbKNct3gVr6ZNdeavdsacCrYfieQwubapd"
+			]
+		},
+		"utils/IERC165.sol": {
+			"keccak256": "0x6494ba40686b1df40d1f261c24d55d2f8affb5958eb2498b4678a143851ee8b8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4d5a197a9d52fc91e1a88d2703cfd60a89c23017d4a92986c3cfff81ea38ddc1",
+				"dweb:/ipfs/QmQaMAJJ2viXKPwpXPHGxUm3gqw9Bp1EM4jefrW6UFmdkE"
+			]
+		}
+	},
+	"version": 1
+}
