@@ -1,0 +1,20 @@
+# 编译生成的文件
+/build/
+/dist/
+/out/
+
+# 依赖文件夹（如使用 Hardhat/Truffle 时）
+node_modules/
+
+# 环境变量文件（可能包含私钥等敏感信息）
+.env
+.env.local
+
+# IDE 配置文件（可选，根据你的编辑器添加）
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Remix 本地缓存
+.remix/
